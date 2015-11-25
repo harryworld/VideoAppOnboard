@@ -14,6 +14,11 @@
 		D112306A1C0368A50060340E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11230681C0368A50060340E /* LaunchScreen.storyboard */; };
 		D11230751C0368A50060340E /* VideoAppOnboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11230741C0368A50060340E /* VideoAppOnboardTests.swift */; };
 		D11230801C0368A50060340E /* VideoAppOnboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112307F1C0368A50060340E /* VideoAppOnboardUITests.swift */; };
+		D112308F1C0369150060340E /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112308E1C0369150060340E /* OnboardViewController.swift */; };
+		D11230911C0369570060340E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11230901C0369570060340E /* Constants.swift */; };
+		D11230931C0369D50060340E /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11230921C0369D50060340E /* Onboard.storyboard */; };
+		D1F380511C060D6700BFB664 /* Museo500-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1F380501C060D6700BFB664 /* Museo500-Regular.otf */; };
+		D1F380531C060DDA00BFB664 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F380521C060DDA00BFB664 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		D112307B1C0368A50060340E /* VideoAppOnboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoAppOnboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D112307F1C0368A50060340E /* VideoAppOnboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAppOnboardUITests.swift; sourceTree = "<group>"; };
 		D11230811C0368A50060340E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D112308E1C0369150060340E /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardViewController.swift; path = Onboard/OnboardViewController.swift; sourceTree = "<group>"; };
+		D11230901C0369570060340E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Onboard/Constants.swift; sourceTree = "<group>"; };
+		D11230921C0369D50060340E /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboard.storyboard; path = Onboard/Onboard.storyboard; sourceTree = "<group>"; };
+		D1F380501C060D6700BFB664 /* Museo500-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Museo500-Regular.otf"; path = "Onboard/Resources/Museo500-Regular.otf"; sourceTree = "<group>"; };
+		D1F380521C060DDA00BFB664 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Onboard/Resources/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 		D112305E1C0368A50060340E /* VideoAppOnboard */ = {
 			isa = PBXGroup;
 			children = (
+				D112308D1C0368F30060340E /* Onboard */,
 				D112305F1C0368A50060340E /* AppDelegate.swift */,
 				D11230611C0368A50060340E /* ViewController.swift */,
 				D11230631C0368A50060340E /* Main.storyboard */,
@@ -123,6 +134,26 @@
 				D11230811C0368A50060340E /* Info.plist */,
 			);
 			path = VideoAppOnboardUITests;
+			sourceTree = "<group>";
+		};
+		D112308D1C0368F30060340E /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				D1F3804F1C060D3400BFB664 /* Resources */,
+				D112308E1C0369150060340E /* OnboardViewController.swift */,
+				D11230901C0369570060340E /* Constants.swift */,
+				D11230921C0369D50060340E /* Onboard.storyboard */,
+			);
+			name = Onboard;
+			sourceTree = "<group>";
+		};
+		D1F3804F1C060D3400BFB664 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D1F380501C060D6700BFB664 /* Museo500-Regular.otf */,
+				D1F380521C060DDA00BFB664 /* Images.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D112306A1C0368A50060340E /* LaunchScreen.storyboard in Resources */,
+				D11230931C0369D50060340E /* Onboard.storyboard in Resources */,
 				D11230671C0368A50060340E /* Assets.xcassets in Resources */,
+				D1F380531C060DDA00BFB664 /* Images.xcassets in Resources */,
+				D1F380511C060D6700BFB664 /* Museo500-Regular.otf in Resources */,
 				D11230651C0368A50060340E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +292,8 @@
 			files = (
 				D11230621C0368A50060340E /* ViewController.swift in Sources */,
 				D11230601C0368A50060340E /* AppDelegate.swift in Sources */,
+				D112308F1C0369150060340E /* OnboardViewController.swift in Sources */,
+				D11230911C0369570060340E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +518,7 @@
 				D11230861C0368A50060340E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D11230871C0368A50060340E /* Build configuration list for PBXNativeTarget "VideoAppOnboardTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +527,7 @@
 				D11230891C0368A50060340E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D112308A1C0368A50060340E /* Build configuration list for PBXNativeTarget "VideoAppOnboardUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +536,7 @@
 				D112308C1C0368A50060340E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
