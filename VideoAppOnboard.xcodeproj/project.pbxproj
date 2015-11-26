@@ -19,6 +19,7 @@
 		D11230931C0369D50060340E /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11230921C0369D50060340E /* Onboard.storyboard */; };
 		D1F380511C060D6700BFB664 /* Museo500-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1F380501C060D6700BFB664 /* Museo500-Regular.otf */; };
 		D1F380531C060DDA00BFB664 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F380521C060DDA00BFB664 /* Images.xcassets */; };
+		D1F380551C06BA3200BFB664 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F380541C06BA3200BFB664 /* CircleView.swift */; };
 		FA0B6A53FFB9D7E6C51A1945 /* Pods_VideoAppOnboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08E3E23818FCD2686A904CB /* Pods_VideoAppOnboard.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		D11230921C0369D50060340E /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboard.storyboard; path = Onboard/Onboard.storyboard; sourceTree = "<group>"; };
 		D1F380501C060D6700BFB664 /* Museo500-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Museo500-Regular.otf"; path = "Onboard/Resources/Museo500-Regular.otf"; sourceTree = "<group>"; };
 		D1F380521C060DDA00BFB664 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Onboard/Resources/Images.xcassets; sourceTree = "<group>"; };
+		D1F380541C06BA3200BFB664 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Onboard/CircleView.swift; sourceTree = "<group>"; };
 		E7B5FEA3B38ADEF801696269 /* Pods-VideoAppOnboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoAppOnboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoAppOnboard/Pods-VideoAppOnboard.debug.xcconfig"; sourceTree = "<group>"; };
 		F5AAA191C70E483E9121175B /* Pods-VideoAppOnboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoAppOnboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoAppOnboard/Pods-VideoAppOnboard.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +161,7 @@
 				D112308E1C0369150060340E /* OnboardViewController.swift */,
 				D11230901C0369570060340E /* Constants.swift */,
 				D11230921C0369D50060340E /* Onboard.storyboard */,
+				D1F380541C06BA3200BFB664 /* CircleView.swift */,
 			);
 			name = Onboard;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11230621C0368A50060340E /* ViewController.swift in Sources */,
+				D1F380551C06BA3200BFB664 /* CircleView.swift in Sources */,
 				D11230601C0368A50060340E /* AppDelegate.swift in Sources */,
 				D112308F1C0369150060340E /* OnboardViewController.swift in Sources */,
 				D11230911C0369570060340E /* Constants.swift in Sources */,

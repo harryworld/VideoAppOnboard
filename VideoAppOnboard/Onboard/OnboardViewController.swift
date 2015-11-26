@@ -38,13 +38,13 @@ class OnboardViewController: UIViewController {
                 // Animate button
                 if result.status == .Authorized {
                     if result.type == .Camera {
-                        
+                        self.animateCircle(self.cameraImageView)
                     }
                     if result.type == .Microphone {
-                        
+                        self.animateCircle(self.audioImageView)
                     }
                     if result.type == .Photos {
-                        
+                        self.animateCircle(self.photosImageView)
                     }
                 }
             }
@@ -61,6 +61,18 @@ class OnboardViewController: UIViewController {
         photosView.addGestureRecognizer(tapPhotos)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        if pscope.statusCamera() == .Authorized {
+            animateCircle(cameraImageView)
+        }
+        if pscope.statusMicrophone() == .Authorized {
+            animateCircle(audioImageView)
+        }
+        if pscope.statusPhotos() == .Authorized {
+            animateCircle(photosImageView)
+        }
+    }
+    
     func cameraTapped(gesture: UITapGestureRecognizer) {
         print("camera")
         pscope.requestCamera()
@@ -72,8 +84,15 @@ class OnboardViewController: UIViewController {
     }
     
     func photosTapped(gesture: UITapGestureRecognizer) {
-        pscope.requestPhotos()
         print("photos")
+        pscope.requestPhotos()
+    }
+    
+    private func animateCircle(currentView: UIView) {
+        let circleView = CircleView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
+        currentView.superview?.addSubview(circleView)
+        circleView.center = currentView.center
+        circleView.animateCircle(0.5)
     }
     
 }
