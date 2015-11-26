@@ -48,67 +48,112 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_photo_camera_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="W2Q-o1-ujQ">
-                                <rect key="frame" x="121" y="515" width="26" height="23"/>
-                                <animations/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_photo_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="OkH-lQ-kwt">
-                                <rect key="frame" x="454" y="514" width="24" height="24"/>
-                                <animations/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_audiotrack_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="nGc-q8-c99">
-                                <rect key="frame" x="292" y="514" width="17" height="24"/>
-                                <animations/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-zN-gyk">
-                                <rect key="frame" x="101" y="558" width="66" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Museo-500" family="Museo" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAo-ht-I6U">
-                                <rect key="frame" x="275" y="558" width="51" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Museo-500" family="Museo" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E15-OF-FOx">
-                                <rect key="frame" x="437" y="558" width="59" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="Museo-500" family="Museo" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="gBg-Zd-2eS">
                                 <rect key="frame" x="250" y="333" width="100" height="100"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEm-Ed-6Xv">
+                                <rect key="frame" x="90" y="493" width="71" height="93"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-zN-gyk">
+                                        <rect key="frame" x="2" y="71" width="66" height="22"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Museo-500" family="Museo" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_photo_camera_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="W2Q-o1-ujQ">
+                                        <rect key="frame" x="22" y="25" width="26" height="23"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="HXf-zN-gyk" firstAttribute="centerX" secondItem="nEm-Ed-6Xv" secondAttribute="centerX" id="066-gE-kh1"/>
+                                    <constraint firstAttribute="width" constant="71" id="OAz-u0-X9r"/>
+                                    <constraint firstItem="W2Q-o1-ujQ" firstAttribute="centerX" secondItem="nEm-Ed-6Xv" secondAttribute="centerX" id="TWr-l7-pj8"/>
+                                    <constraint firstAttribute="height" constant="93" id="bdO-tl-D28"/>
+                                    <constraint firstItem="W2Q-o1-ujQ" firstAttribute="top" secondItem="nEm-Ed-6Xv" secondAttribute="top" constant="25" id="tNv-dl-usF"/>
+                                    <constraint firstAttribute="bottom" secondItem="HXf-zN-gyk" secondAttribute="bottom" id="x5o-y1-RyQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0k-CG-GSW">
+                                <rect key="frame" x="265" y="493" width="71" height="93"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAo-ht-I6U">
+                                        <rect key="frame" x="10" y="71" width="51" height="22"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Museo-500" family="Museo" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="HPj-F0-nFa"/>
+                                    <constraint firstItem="DAo-ht-I6U" firstAttribute="centerX" secondItem="o0k-CG-GSW" secondAttribute="centerX" id="OHU-QL-zaa"/>
+                                    <constraint firstAttribute="bottom" secondItem="DAo-ht-I6U" secondAttribute="bottom" id="tjW-lN-BZ6"/>
+                                    <constraint firstAttribute="height" constant="93" id="xC7-F3-5YA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJx-AA-gsi">
+                                <rect key="frame" x="440" y="493" width="71" height="93"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E15-OF-FOx">
+                                        <rect key="frame" x="6" y="71" width="59" height="22"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Museo-500" family="Museo" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_photo_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="OkH-lQ-kwt">
+                                        <rect key="frame" x="23" y="25" width="24" height="24"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="OkH-lQ-kwt" firstAttribute="centerX" secondItem="HJx-AA-gsi" secondAttribute="centerX" id="FHg-os-OKC"/>
+                                    <constraint firstAttribute="height" constant="93" id="UsT-5O-tjr"/>
+                                    <constraint firstItem="E15-OF-FOx" firstAttribute="centerX" secondItem="HJx-AA-gsi" secondAttribute="centerX" id="adA-Hh-Z9v"/>
+                                    <constraint firstAttribute="width" constant="71" id="bkJ-wJ-DSM"/>
+                                    <constraint firstItem="OkH-lQ-kwt" firstAttribute="top" secondItem="HJx-AA-gsi" secondAttribute="top" constant="25" id="cvK-u1-CqX"/>
+                                    <constraint firstAttribute="bottom" secondItem="E15-OF-FOx" secondAttribute="bottom" id="sKP-YQ-Txo"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_audiotrack_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="nGc-q8-c99">
+                                <rect key="frame" x="292" y="518" width="17" height="24"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.50588235294117645" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="HXf-zN-gyk" firstAttribute="centerX" secondItem="W2Q-o1-ujQ" secondAttribute="centerX" id="3EM-Om-IAB"/>
-                            <constraint firstItem="nGc-q8-c99" firstAttribute="leading" secondItem="W2Q-o1-ujQ" secondAttribute="trailing" constant="145" id="6qp-ob-LRI"/>
-                            <constraint firstItem="OkH-lQ-kwt" firstAttribute="leading" secondItem="nGc-q8-c99" secondAttribute="trailing" constant="145" id="DTe-P1-x3I"/>
+                            <constraint firstItem="o0k-CG-GSW" firstAttribute="top" secondItem="qJq-Q4-jOq" secondAttribute="bottom" constant="11" id="3s1-Fb-bqm"/>
+                            <constraint firstItem="o0k-CG-GSW" firstAttribute="centerX" secondItem="UP1-68-OHN" secondAttribute="centerX" id="D1W-8X-xbD"/>
                             <constraint firstItem="0sd-Xn-D6K" firstAttribute="top" secondItem="2vt-if-F8s" secondAttribute="bottom" constant="30" id="F8Y-Qd-L87"/>
-                            <constraint firstItem="E15-OF-FOx" firstAttribute="top" secondItem="OkH-lQ-kwt" secondAttribute="bottom" constant="20" id="LU6-UX-GbA"/>
-                            <constraint firstItem="DAo-ht-I6U" firstAttribute="centerX" secondItem="nGc-q8-c99" secondAttribute="centerX" id="Ooi-pz-gO8"/>
+                            <constraint firstItem="nEm-Ed-6Xv" firstAttribute="bottom" secondItem="o0k-CG-GSW" secondAttribute="bottom" id="FFa-3s-OI8"/>
+                            <constraint firstItem="nGc-q8-c99" firstAttribute="centerX" secondItem="o0k-CG-GSW" secondAttribute="centerX" id="FUT-79-sic"/>
+                            <constraint firstItem="nGc-q8-c99" firstAttribute="top" secondItem="o0k-CG-GSW" secondAttribute="top" constant="25" id="ME0-9u-f6X"/>
+                            <constraint firstItem="o0k-CG-GSW" firstAttribute="leading" secondItem="nEm-Ed-6Xv" secondAttribute="trailing" constant="104" id="NzS-gX-kt7"/>
+                            <constraint firstItem="HJx-AA-gsi" firstAttribute="leading" secondItem="o0k-CG-GSW" secondAttribute="trailing" constant="104" id="P8s-nA-K0O"/>
                             <constraint firstItem="qJq-Q4-jOq" firstAttribute="centerX" secondItem="UP1-68-OHN" secondAttribute="centerX" id="Vu5-4O-h6x"/>
                             <constraint firstItem="Dc9-fZ-wYE" firstAttribute="top" secondItem="qJq-Q4-jOq" secondAttribute="bottom" constant="118" id="Zgb-Io-AP7"/>
-                            <constraint firstItem="E15-OF-FOx" firstAttribute="centerX" secondItem="OkH-lQ-kwt" secondAttribute="centerX" id="aX7-dy-t9T"/>
-                            <constraint firstItem="nGc-q8-c99" firstAttribute="top" secondItem="qJq-Q4-jOq" secondAttribute="bottom" constant="32" id="avO-lN-qGp"/>
-                            <constraint firstItem="DAo-ht-I6U" firstAttribute="top" secondItem="nGc-q8-c99" secondAttribute="bottom" constant="20" id="bwX-Xp-s6P"/>
                             <constraint firstItem="0sd-Xn-D6K" firstAttribute="centerX" secondItem="UP1-68-OHN" secondAttribute="centerX" id="c4R-Mp-4d7"/>
+                            <constraint firstItem="Dc9-fZ-wYE" firstAttribute="top" secondItem="o0k-CG-GSW" secondAttribute="bottom" constant="14" id="fNA-Ji-XRe"/>
                             <constraint firstItem="gBg-Zd-2eS" firstAttribute="centerX" secondItem="UP1-68-OHN" secondAttribute="centerX" id="gAi-Wk-4QM"/>
-                            <constraint firstItem="HXf-zN-gyk" firstAttribute="top" secondItem="W2Q-o1-ujQ" secondAttribute="bottom" constant="20" id="gxL-um-wcJ"/>
-                            <constraint firstItem="nGc-q8-c99" firstAttribute="centerX" secondItem="UP1-68-OHN" secondAttribute="centerX" id="kSl-P6-ngH"/>
+                            <constraint firstItem="HJx-AA-gsi" firstAttribute="bottom" secondItem="o0k-CG-GSW" secondAttribute="bottom" id="nus-hF-cdo"/>
                             <constraint firstItem="qJq-Q4-jOq" firstAttribute="top" secondItem="gBg-Zd-2eS" secondAttribute="bottom" constant="20" id="oEH-S5-vhs"/>
-                            <constraint firstItem="W2Q-o1-ujQ" firstAttribute="baseline" secondItem="nGc-q8-c99" secondAttribute="baseline" id="pDk-gE-92y"/>
-                            <constraint firstItem="nGc-q8-c99" firstAttribute="baseline" secondItem="OkH-lQ-kwt" secondAttribute="baseline" id="zhM-gr-Bxd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="audioImageView" destination="nGc-q8-c99" id="5up-tc-yTN"/>
+                        <outlet property="audioView" destination="o0k-CG-GSW" id="1PB-Yt-GYF"/>
+                        <outlet property="cameraImageView" destination="W2Q-o1-ujQ" id="mes-Ni-AcD"/>
+                        <outlet property="cameraView" destination="nEm-Ed-6Xv" id="dwg-EL-teT"/>
+                        <outlet property="photosImageView" destination="OkH-lQ-kwt" id="cAN-da-a8O"/>
+                        <outlet property="photosView" destination="HJx-AA-gsi" id="bxr-4G-ysf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28G-ej-5nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
