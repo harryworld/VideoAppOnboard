@@ -15,9 +15,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(animated: Bool) {
+        if NSUserDefaults.standardUserDefaults().boolForKey(kPermissionGranted) {
+            
+        } else {
+            let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("OnboardViewController") as! OnboardViewController
+            presentViewController(vc, animated: false, completion: nil)
+        }
     }
 
 
