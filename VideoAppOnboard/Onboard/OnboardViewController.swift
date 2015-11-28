@@ -9,7 +9,7 @@
 import UIKit
 import PermissionScope
 
-class OnboardViewController: UIViewController {
+public class OnboardViewController: UIViewController {
 
     let pscope = PermissionScope()
     
@@ -21,7 +21,7 @@ class OnboardViewController: UIViewController {
     @IBOutlet weak var audioImageView: UIImageView!
     @IBOutlet weak var photosImageView: UIImageView!
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         pscope.viewControllerForAlerts = self
@@ -63,7 +63,7 @@ class OnboardViewController: UIViewController {
         photosView.addGestureRecognizer(tapPhotos)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         if pscope.statusCamera() == .Authorized {
             animateCircle(cameraImageView)
         }
