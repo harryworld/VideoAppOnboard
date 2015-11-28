@@ -87,11 +87,17 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_audiotrack_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="nGc-q8-c99">
+                                        <rect key="frame" x="27" y="25" width="17" height="24"/>
+                                        <animations/>
+                                    </imageView>
                                 </subviews>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="HPj-F0-nFa"/>
                                     <constraint firstItem="DAo-ht-I6U" firstAttribute="centerX" secondItem="o0k-CG-GSW" secondAttribute="centerX" id="OHU-QL-zaa"/>
+                                    <constraint firstItem="nGc-q8-c99" firstAttribute="centerX" secondItem="o0k-CG-GSW" secondAttribute="centerX" id="PRL-lG-C78"/>
+                                    <constraint firstItem="nGc-q8-c99" firstAttribute="top" secondItem="o0k-CG-GSW" secondAttribute="top" constant="25" id="nWs-kN-bZO"/>
                                     <constraint firstAttribute="bottom" secondItem="DAo-ht-I6U" secondAttribute="bottom" id="tjW-lN-BZ6"/>
                                     <constraint firstAttribute="height" constant="93" id="xC7-F3-5YA"/>
                                 </constraints>
@@ -121,10 +127,6 @@
                                     <constraint firstAttribute="bottom" secondItem="E15-OF-FOx" secondAttribute="bottom" id="sKP-YQ-Txo"/>
                                 </constraints>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="ic_audiotrack_white_24px" translatesAutoresizingMaskIntoConstraints="NO" id="nGc-q8-c99">
-                                <rect key="frame" x="292" y="518" width="17" height="24"/>
-                                <animations/>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.50588235294117645" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,8 +135,6 @@
                             <constraint firstItem="o0k-CG-GSW" firstAttribute="centerX" secondItem="UP1-68-OHN" secondAttribute="centerX" id="D1W-8X-xbD"/>
                             <constraint firstItem="0sd-Xn-D6K" firstAttribute="top" secondItem="2vt-if-F8s" secondAttribute="bottom" constant="30" id="F8Y-Qd-L87"/>
                             <constraint firstItem="nEm-Ed-6Xv" firstAttribute="bottom" secondItem="o0k-CG-GSW" secondAttribute="bottom" id="FFa-3s-OI8"/>
-                            <constraint firstItem="nGc-q8-c99" firstAttribute="centerX" secondItem="o0k-CG-GSW" secondAttribute="centerX" id="FUT-79-sic"/>
-                            <constraint firstItem="nGc-q8-c99" firstAttribute="top" secondItem="o0k-CG-GSW" secondAttribute="top" constant="25" id="ME0-9u-f6X"/>
                             <constraint firstItem="o0k-CG-GSW" firstAttribute="leading" secondItem="nEm-Ed-6Xv" secondAttribute="trailing" constant="104" id="NzS-gX-kt7"/>
                             <constraint firstItem="HJx-AA-gsi" firstAttribute="leading" secondItem="o0k-CG-GSW" secondAttribute="trailing" constant="104" id="P8s-nA-K0O"/>
                             <constraint firstItem="qJq-Q4-jOq" firstAttribute="centerX" secondItem="UP1-68-OHN" secondAttribute="centerX" id="Vu5-4O-h6x"/>
@@ -147,8 +147,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="audioImageView" destination="nGc-q8-c99" id="5up-tc-yTN"/>
-                        <outlet property="audioView" destination="o0k-CG-GSW" id="1PB-Yt-GYF"/>
+                        <outlet property="audioImageView" destination="nGc-q8-c99" id="zla-lN-chc"/>
+                        <outlet property="audioView" destination="o0k-CG-GSW" id="lOj-g0-SSX"/>
                         <outlet property="cameraImageView" destination="W2Q-o1-ujQ" id="mes-Ni-AcD"/>
                         <outlet property="cameraView" destination="nEm-Ed-6Xv" id="dwg-EL-teT"/>
                         <outlet property="photosImageView" destination="OkH-lQ-kwt" id="cAN-da-a8O"/>
