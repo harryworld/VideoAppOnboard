@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PermissionScope
 
 class ViewController: UIViewController {
 
@@ -16,7 +17,10 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        if NSUserDefaults.standardUserDefaults().boolForKey(kPermissionGranted) {
+        let pscope = PermissionScope()
+        if pscope.statusCamera() == .Authorized &&
+            pscope.statusMicrophone() == .Authorized &&
+            pscope.statusPhotos() == .Authorized {
             
         } else {
             let storyboard = UIStoryboard(name: "Onboard", bundle: nil)

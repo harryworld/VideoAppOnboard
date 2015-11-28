@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AssetsLibrary
 import PermissionScope
 
 public class OnboardViewController: UIViewController {
 
+    public var albumName: String? = "Moments"
+    
     let pscope = PermissionScope()
     
     @IBOutlet weak var cameraView: UIView!
@@ -45,11 +48,13 @@ public class OnboardViewController: UIViewController {
                             self.animateCircle(self.audioImageView)
                         }
                         if result.type == .Photos {
+                            self.createAlbum()
                             self.animateCircle(self.photosImageView)
                         }
                     })
                 }
             }
+            self.allAllowed()
         }
         pscope.onDisabledOrDenied = { results in
             print("Request was denied or disabled with results \(results)")
@@ -73,6 +78,7 @@ public class OnboardViewController: UIViewController {
         if pscope.statusPhotos() == .Authorized {
             animateCircle(photosImageView)
         }
+        allAllowed()
     }
     
     func cameraTapped(gesture: UITapGestureRecognizer) {
@@ -97,4 +103,31 @@ public class OnboardViewController: UIViewController {
         circleView.animateCircle(0.5)
     }
     
+    private func allAllowed() -> Bool {
+        let statusCamera = pscope.statusCamera()
+        let statusMicrophone = pscope.statusMicrophone()
+        let statusPhotos = pscope.statusPhotos()
+        
+        if (statusCamera == .Authorized && statusMicrophone == .Authorized && statusPhotos == .Authorized) {
+            dismissViewControllerAnimated(true, completion: nil)
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    private func createAlbum() {
+        guard albumName != nil else {
+            print("Album name is not set")
+            return
+        }
+        
+        let library = ALAssetsLibrary()
+        library.addAssetsGroupAlbumWithName(albumName, resultBlock: { (group) -> Void in
+            print("Album added: \(self.albumName!)")
+            }, failureBlock: { (error) -> Void in
+                print("Error adding album \(error)")
+        })
+    }
+
 }
