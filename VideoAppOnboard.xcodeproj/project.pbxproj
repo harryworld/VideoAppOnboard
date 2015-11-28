@@ -16,7 +16,7 @@
 		D11230801C0368A50060340E /* VideoAppOnboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112307F1C0368A50060340E /* VideoAppOnboardUITests.swift */; };
 		D112308F1C0369150060340E /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112308E1C0369150060340E /* OnboardViewController.swift */; };
 		D11230911C0369570060340E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11230901C0369570060340E /* Constants.swift */; };
-		D11230931C0369D50060340E /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11230921C0369D50060340E /* Onboard.storyboard */; };
+		D1E8E0DD1C09BA69007EC9DC /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E8E0DC1C09BA69007EC9DC /* Onboard.storyboard */; };
 		D1F380511C060D6700BFB664 /* Museo500-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1F380501C060D6700BFB664 /* Museo500-Regular.otf */; };
 		D1F380531C060DDA00BFB664 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1F380521C060DDA00BFB664 /* Images.xcassets */; };
 		D1F380551C06BA3200BFB664 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F380541C06BA3200BFB664 /* CircleView.swift */; };
@@ -57,7 +57,7 @@
 		D11230811C0368A50060340E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D112308E1C0369150060340E /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardViewController.swift; path = Onboard/OnboardViewController.swift; sourceTree = "<group>"; };
 		D11230901C0369570060340E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Onboard/Constants.swift; sourceTree = "<group>"; };
-		D11230921C0369D50060340E /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboard.storyboard; path = Onboard/Onboard.storyboard; sourceTree = "<group>"; };
+		D1E8E0DC1C09BA69007EC9DC /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboard.storyboard; path = Onboard/Resources/Onboard.storyboard; sourceTree = "<group>"; };
 		D1F380501C060D6700BFB664 /* Museo500-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Museo500-Regular.otf"; path = "Onboard/Resources/Museo500-Regular.otf"; sourceTree = "<group>"; };
 		D1F380521C060DDA00BFB664 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Onboard/Resources/Images.xcassets; sourceTree = "<group>"; };
 		D1F380541C06BA3200BFB664 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleView.swift; path = Onboard/CircleView.swift; sourceTree = "<group>"; };
@@ -160,7 +160,6 @@
 				D1F3804F1C060D3400BFB664 /* Resources */,
 				D112308E1C0369150060340E /* OnboardViewController.swift */,
 				D11230901C0369570060340E /* Constants.swift */,
-				D11230921C0369D50060340E /* Onboard.storyboard */,
 				D1F380541C06BA3200BFB664 /* CircleView.swift */,
 			);
 			name = Onboard;
@@ -169,6 +168,7 @@
 		D1F3804F1C060D3400BFB664 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D1E8E0DC1C09BA69007EC9DC /* Onboard.storyboard */,
 				D1F380501C060D6700BFB664 /* Museo500-Regular.otf */,
 				D1F380521C060DDA00BFB664 /* Images.xcassets */,
 			);
@@ -291,10 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D112306A1C0368A50060340E /* LaunchScreen.storyboard in Resources */,
-				D11230931C0369D50060340E /* Onboard.storyboard in Resources */,
 				D11230671C0368A50060340E /* Assets.xcassets in Resources */,
 				D1F380531C060DDA00BFB664 /* Images.xcassets in Resources */,
 				D1F380511C060D6700BFB664 /* Museo500-Regular.otf in Resources */,
+				D1E8E0DD1C09BA69007EC9DC /* Onboard.storyboard in Resources */,
 				D11230651C0368A50060340E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
