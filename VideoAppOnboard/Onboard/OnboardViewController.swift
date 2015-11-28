@@ -37,15 +37,17 @@ class OnboardViewController: UIViewController {
             for result in results {
                 // Animate button
                 if result.status == .Authorized {
-                    if result.type == .Camera {
-                        self.animateCircle(self.cameraImageView)
-                    }
-                    if result.type == .Microphone {
-                        self.animateCircle(self.audioImageView)
-                    }
-                    if result.type == .Photos {
-                        self.animateCircle(self.photosImageView)
-                    }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if result.type == .Camera {
+                            self.animateCircle(self.cameraImageView)
+                        }
+                        if result.type == .Microphone {
+                            self.animateCircle(self.audioImageView)
+                        }
+                        if result.type == .Photos {
+                            self.animateCircle(self.photosImageView)
+                        }
+                    })
                 }
             }
         }
