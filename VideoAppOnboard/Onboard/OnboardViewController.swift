@@ -24,6 +24,12 @@ public class OnboardViewController: UIViewController {
     @IBOutlet weak var audioImageView: UIImageView!
     @IBOutlet weak var photosImageView: UIImageView!
     
+    public class func loadFromNib() -> OnboardViewController {
+        let bundle = NSBundle(forClass: OnboardViewController.self)
+        let storyboard = UIStoryboard(name: "Onboard", bundle: bundle)
+        return storyboard.instantiateViewControllerWithIdentifier("OnboardViewController") as! OnboardViewController
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         
