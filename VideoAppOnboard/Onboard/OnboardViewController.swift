@@ -13,6 +13,7 @@ import PermissionScope
 public class OnboardViewController: UIViewController {
 
     public var albumName: String? = "Moments"
+    var complete: (() -> Void)?
     
     let pscope = PermissionScope()
     
@@ -28,6 +29,12 @@ public class OnboardViewController: UIViewController {
         let bundle = NSBundle(forClass: OnboardViewController.self)
         let storyboard = UIStoryboard(name: "Onboard", bundle: bundle)
         return storyboard.instantiateViewControllerWithIdentifier("OnboardViewController") as! OnboardViewController
+    }
+    
+    public class func loadFromNib(complete: () -> Void) -> OnboardViewController {
+        let vc = OnboardViewController.loadFromNib()
+        vc.complete = complete
+        return vc
     }
     
     override public func viewDidLoad() {
@@ -115,7 +122,11 @@ public class OnboardViewController: UIViewController {
         let statusPhotos = pscope.statusPhotos()
         
         if (statusCamera == .Authorized && statusMicrophone == .Authorized && statusPhotos == .Authorized) {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismissViewControllerAnimated(true) {
+                if let complete = self.complete {
+                    complete()
+                }
+            }
             return true
         } else {
             return false
