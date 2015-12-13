@@ -6,6 +6,8 @@
 //  Copyright © 2015 STAY REAL. All rights reserved.
 //
 
+let ANIMATION_TIME = 0.5
+
 import UIKit
 import AssetsLibrary
 import PermissionScope
@@ -13,6 +15,9 @@ import PermissionScope
 public class OnboardViewController: UIViewController {
 
     public var albumName: String? = "Moments"
+    
+    var window: UIWindow?
+    var vcToShow: UIViewController?
     var complete: (() -> Void)?
     
     let pscope = PermissionScope()
@@ -31,7 +36,14 @@ public class OnboardViewController: UIViewController {
         return storyboard.instantiateViewControllerWithIdentifier("OnboardViewController") as! OnboardViewController
     }
     
-    public class func loadFromNib(complete: () -> Void) -> OnboardViewController {
+    public class func loadFromNib(window window: UIWindow?, vcToShow: UIViewController?) -> OnboardViewController {
+        let vc = OnboardViewController.loadFromNib()
+        vc.window = window
+        vc.vcToShow = vcToShow
+        return vc
+    }
+    
+    public class func loadFromNib(complete complete: () -> Void) -> OnboardViewController {
         let vc = OnboardViewController.loadFromNib()
         vc.complete = complete
         return vc
@@ -113,7 +125,7 @@ public class OnboardViewController: UIViewController {
         let circleView = CircleView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
         currentView.superview?.addSubview(circleView)
         circleView.center = currentView.center
-        circleView.animateCircle(0.5)
+        circleView.animateCircle(ANIMATION_TIME)
     }
     
     private func allAllowed() -> Bool {
@@ -122,10 +134,14 @@ public class OnboardViewController: UIViewController {
         let statusPhotos = pscope.statusPhotos()
         
         if (statusCamera == .Authorized && statusMicrophone == .Authorized && statusPhotos == .Authorized) {
-            dismissViewControllerAnimated(true) {
-                if let complete = self.complete {
-                    complete()
-                }
+            if let window = self.window, vcToShow = self.vcToShow {
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(ANIMATION_TIME * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue(), { () -> Void in
+                    window.rootViewController = vcToShow
+                })
+            }
+            if let complete = self.complete {
+                complete()
             }
             return true
         } else {
