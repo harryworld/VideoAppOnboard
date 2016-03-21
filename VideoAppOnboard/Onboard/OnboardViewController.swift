@@ -11,6 +11,7 @@ let ANIMATION_TIME = 0.5
 import UIKit
 import AssetsLibrary
 import PermissionScope
+import PulsingHalo
 
 public class OnboardViewController: UIViewController {
 
@@ -29,6 +30,14 @@ public class OnboardViewController: UIViewController {
     @IBOutlet weak var cameraImageView: UIImageView!
     @IBOutlet weak var audioImageView: UIImageView!
     @IBOutlet weak var photosImageView: UIImageView!
+    
+    lazy var cameraPulse: PulsingHaloLayer = self.createPulse()
+    lazy var audioPulse: PulsingHaloLayer = self.createPulse()
+    lazy var photosPulse: PulsingHaloLayer = self.createPulse()
+    
+    // ===================
+    // MARK: - loadFromNib
+    // ===================
     
     public class func loadFromNib() -> OnboardViewController {
         let bundle = NSBundle(forClass: OnboardViewController.self)
@@ -49,6 +58,10 @@ public class OnboardViewController: UIViewController {
         return vc
     }
     
+    // =========================
+    // MARK: - Lifecycle Methods
+    // =========================
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,14 +80,14 @@ public class OnboardViewController: UIViewController {
                 if result.status == .Authorized {
                     dispatch_async(dispatch_get_main_queue(), {
                         if result.type == .Camera {
-                            self.animateCircle(self.cameraImageView)
+                            self.animateCircle(self.cameraImageView, self.cameraPulse)
                         }
                         if result.type == .Microphone {
-                            self.animateCircle(self.audioImageView)
+                            self.animateCircle(self.audioImageView, self.audioPulse)
                         }
                         if result.type == .Photos {
                             self.createAlbum()
-                            self.animateCircle(self.photosImageView)
+                            self.animateCircle(self.photosImageView, self.photosPulse)
                         }
                     })
                 }
@@ -95,17 +108,31 @@ public class OnboardViewController: UIViewController {
     
     override public func viewDidAppear(animated: Bool) {
         if pscope.statusCamera() == .Authorized {
-            animateCircle(cameraImageView)
+            animateCircle(cameraImageView, cameraPulse)
+        } else {
+            showPulse(cameraImageView, cameraPulse)
         }
+        
         if pscope.statusMicrophone() == .Authorized {
-            animateCircle(audioImageView)
+            animateCircle(audioImageView, audioPulse)
+        } else {
+            showPulse(audioImageView, audioPulse)
         }
+        
         if pscope.statusPhotos() == .Authorized {
-            animateCircle(photosImageView)
+            animateCircle(photosImageView, photosPulse)
+        } else {
+            showPulse(photosImageView, photosPulse)
         }
+        
+        // Check if all required permissions granted
         allAllowed()
     }
     
+    // =================
+    // MARK: - IBActions
+    // =================
+
     func cameraTapped(gesture: UITapGestureRecognizer) {
         print("camera")
         pscope.requestCamera()
@@ -121,7 +148,27 @@ public class OnboardViewController: UIViewController {
         pscope.requestPhotos()
     }
     
-    private func animateCircle(currentView: UIView) {
+    // ======================
+    // MARK: - Helper Methods
+    // ======================
+    
+    private func createPulse() -> PulsingHaloLayer {
+        let halo = PulsingHaloLayer()
+        halo.haloLayerNumber = 2
+        halo.backgroundColor = UIColor.redColor().CGColor
+        halo.animationDuration = 8
+        return halo
+    }
+    
+    private func showPulse(currentView: UIView, _ halo: PulsingHaloLayer) {
+        halo.position = currentView.center
+        currentView.superview?.layer.addSublayer(halo)
+        halo.start()
+    }
+    
+    private func animateCircle(currentView: UIView, _ halo: PulsingHaloLayer) {
+        halo.removeFromSuperlayer()
+        
         let circleView = CircleView(frame: CGRect(x: 0, y: 0, width: 55, height: 55))
         currentView.superview?.addSubview(circleView)
         circleView.center = currentView.center

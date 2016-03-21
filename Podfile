@@ -7,5 +7,6 @@ target 'VideoAppOnboard' do
   # pod 'SnapKit', '~> 0.15.0'
   # pod 'HanekeSwift', :git => 'https://github.com/Haneke/HanekeSwift.git'
   pod 'PermissionScope'
+  pod 'PulsingHalo'
 end
 
